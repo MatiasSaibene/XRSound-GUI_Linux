@@ -1,0 +1,524 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>733</width>
+    <height>654</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>XRSound GUI</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../res.qrc">
+    <normaloff>:/res/xrs.ico</normaloff>:/res/xrs.ico</iconset>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_2">
+    <item>
+     <layout class="QVBoxLayout" name="mainLayout">
+      <item>
+       <widget class="QLabel" name="nameLabel">
+        <property name="text">
+         <string>XRSound GUI</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignHCenter|Qt::AlignTop</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="controlLayout">
+        <item>
+         <widget class="QGroupBox" name="systemGroup">
+          <property name="title">
+           <string>System</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_3">
+           <item>
+            <widget class="QLabel" name="mastVolLabel">
+             <property name="text">
+              <string>Master volume:</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSlider" name="mastVolSlider">
+             <property name="maximum">
+              <number>100</number>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="enableVerbCheck">
+             <property name="text">
+              <string>Enable verbose logging</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="logAnimCheck">
+             <property name="text">
+              <string>Log vessel animations</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="logThrCheck">
+             <property name="text">
+              <string>Log thruster data</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="silenceSpCheck">
+             <property name="text">
+              <string>Silence of space</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="disApLabel">
+             <property name="text">
+              <string>Disable autopilots time acceleration threshold:</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSlider" name="disApSlider">
+             <property name="maximum">
+              <number>10000</number>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="updateIntLabel">
+             <property name="text">
+              <string>Update interval:</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSlider" name="updateIntSlider">
+             <property name="minimum">
+              <number>2</number>
+             </property>
+             <property name="maximum">
+              <number>100</number>
+             </property>
+             <property name="value">
+              <number>2</number>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="musicFolderLabel">
+             <property name="text">
+              <string>Music folder:</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="musicFolderButton">
+             <property name="text">
+              <string>Change</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="musicVolLabel">
+             <property name="text">
+              <string>Music volume:</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSlider" name="musicVolSlider">
+             <property name="maximum">
+              <number>100</number>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="resetSysButton">
+             <property name="text">
+              <string>Reset to defaults</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="musicOrderLabel">
+             <property name="text">
+              <string>Music order:</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QRadioButton" name="musicRandom">
+             <property name="text">
+              <string>Random</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QRadioButton" name="musicSeq">
+             <property name="text">
+              <string>Sequential</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="soundGroup">
+          <property name="title">
+           <string>Sound files and groups</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout">
+           <item>
+            <widget class="QLabel" name="musicIntLabel">
+             <property name="text">
+              <string>Music play internal:</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSlider" name="musicIntSlider">
+             <property name="minimum">
+              <number>0</number>
+             </property>
+             <property name="maximum">
+              <number>2</number>
+             </property>
+             <property name="value">
+              <number>0</number>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="tickPosition">
+              <enum>QSlider::TicksBothSides</enum>
+             </property>
+             <property name="tickInterval">
+              <number>1</number>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="musicExtLabel">
+             <property name="text">
+              <string>Music play external:</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSlider" name="musicExtSlider">
+             <property name="minimum">
+              <number>0</number>
+             </property>
+             <property name="maximum">
+              <number>2</number>
+             </property>
+             <property name="value">
+              <number>0</number>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="tickPosition">
+              <enum>QSlider::TicksBothSides</enum>
+             </property>
+             <property name="tickInterval">
+              <number>1</number>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="cabinMinLabel">
+             <property name="text">
+              <string>Cabin ambience minimum time:</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSlider" name="cabinMinSlider">
+             <property name="minimum">
+              <number>7</number>
+             </property>
+             <property name="maximum">
+              <number>300</number>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="cabinMaxLabel">
+             <property name="text">
+              <string>Cabin ambience maximum time:</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSlider" name="cabinMaxSlider">
+             <property name="minimum">
+              <number>7</number>
+             </property>
+             <property name="maximum">
+              <number>300</number>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="resetSndButton">
+             <property name="text">
+              <string>Reset to defaults</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="atcGroup">
+          <property name="title">
+           <string>ATC</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_4">
+           <item>
+            <widget class="QLabel" name="atcFolderLabel">
+             <property name="text">
+              <string>ATC folder:</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="changeAtcButton">
+             <property name="text">
+              <string>Change</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="atcVolumeLabel">
+             <property name="text">
+              <string>ATC volume:</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSlider" name="atcVolSlider">
+             <property name="maximum">
+              <number>100</number>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="atcMinLabel">
+             <property name="text">
+              <string>ATC minimum time:</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSlider" name="atcMinSlider">
+             <property name="minimum">
+              <number>10</number>
+             </property>
+             <property name="maximum">
+              <number>900</number>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="atcMaxLabel">
+             <property name="text">
+              <string>ATC maximum time:</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSlider" name="atcMaxSlider">
+             <property name="minimum">
+              <number>10</number>
+             </property>
+             <property name="maximum">
+              <number>900</number>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="allowLandCheck">
+             <property name="text">
+              <string>Allow ATC while landed</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="allowReentCheck">
+             <property name="text">
+              <string>Allow ATC during reentry</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="allowAtmCheck">
+             <property name="text">
+              <string>Allow ATC in atmosphere</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="delayDisLabel">
+             <property name="text">
+              <string>Delay planet distance:</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSlider" name="delayDisSlider">
+             <property name="maximum">
+              <number>1000000</number>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="delayMultLabel">
+             <property name="text">
+              <string>Delay planet multiplier:</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSlider" name="delayMultSlider">
+             <property name="minimum">
+              <number>1</number>
+             </property>
+             <property name="maximum">
+              <number>100</number>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="resetAtcButton">
+             <property name="text">
+              <string>Reset to defaults</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item alignment="Qt::AlignRight">
+       <widget class="QPushButton" name="applyButton">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="layoutDirection">
+         <enum>Qt::LeftToRight</enum>
+        </property>
+        <property name="text">
+         <string>Apply</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionSelPath"/>
+   <addaction name="actionRefresh"/>
+   <addaction name="actionAbout"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionAbout">
+   <property name="text">
+    <string>About</string>
+   </property>
+   <property name="toolTip">
+    <string>About</string>
+   </property>
+   <property name="statusTip">
+    <string>About XRSound GUI</string>
+   </property>
+  </action>
+  <action name="actionSelPath">
+   <property name="text">
+    <string>Select Orbiter folder</string>
+   </property>
+   <property name="iconText">
+    <string>Select Orbiter folder</string>
+   </property>
+   <property name="toolTip">
+    <string>Select Orbiter folder</string>
+   </property>
+  </action>
+  <action name="actionRefresh">
+   <property name="text">
+    <string>Reload</string>
+   </property>
+   <property name="statusTip">
+    <string>Re-read the config file</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="../res.qrc"/>
+ </resources>
+ <connections/>
+</ui>
