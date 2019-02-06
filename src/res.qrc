@@ -1,5 +1,5 @@
 <RCC>
     <qresource prefix="/">
-        <file>res/xrs.ico</file>
+        <file>../res/xrs.ico</file>
     </qresource>
 </RCC>

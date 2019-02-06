@@ -36,7 +36,7 @@ FORMS += \
         mainwindow.ui
 
 RESOURCES += \
-    ../res.qrc
+        res.qrc
 
 RC_ICONS = ../res/xrs.ico
 

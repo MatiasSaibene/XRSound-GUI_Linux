@@ -1,5 +1,5 @@
 # XRSound GUI
-XRSound is a lightweight GUI to configure XRSound. Allows you adjust all options (except sound files and groups section) via graphical interface.
+XRSound is a lightweight GUI to configure XRSound. Allows you adjust all options (except sound files and groups section) via a graphical interface.
 
 Read the manual for an explanation to options.
 

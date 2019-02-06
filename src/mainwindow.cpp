@@ -265,9 +265,12 @@ void MainWindow::on_resetSysButton_clicked()
     ui->updateIntSlider->setValue(5);
 
     musicPath = "XRSound/Default/Music";
-    ui->musicFolderLabel->setText("Music folder: " + orbiterPath + "XRSound/Default/Music");
+    ui->musicFolderLabel->setText("Music folder: XRSound/Default/Music");
 
     ui->musicVolSlider->setValue(100);
+
+    ui->musicOrderLabel->setText("Music order: Random");
+    ui->musicRandom->setChecked(true);
 }
 
 void MainWindow::on_resetSndButton_clicked()
@@ -292,7 +295,7 @@ void MainWindow::on_resetAtcButton_clicked()
     if(res != QMessageBox::Yes) return;
 
     atcPath = "XRSound/Default/Altea STS";
-    ui->atcFolderLabel->setText("ATC folder: " + orbiterPath + "XRSound/Default/Altea STS");
+    ui->atcFolderLabel->setText("ATC folder: XRSound/Default/Altea STS");
 
     ui->atcVolSlider->setValue(100);
     ui->atcMinSlider->setValue(15);
@@ -380,11 +383,11 @@ void MainWindow::on_actionRefresh_triggered()
 void MainWindow::on_actionAbout_triggered()
 {
     QMessageBox::about(this, "About XRSound GUI", "XRSound GUI <br>"
-                                                  "A graphical interface to configure XRSound <br> <br>"
+                                                  "A graphical interface to configure XRSound. <br> <br>"
 
-                                                  "Version: 1.0 <br>"
-                                                  "Build date: Jan 2019 <br>"
-                                                  "Check for updates on <a href='https://github.com/abdullah-radwan/XRSound-GUI/releases/latest'>"
+                                                  "Version: 1.0a <br>"
+                                                  "Build date: Feb 2019 <br>"
+                                                  "Check for updates on <a href='https://github.com/abdullah-radwan/XRSound-GUI/releases'>"
                                                   "GitHub</a>. <br> <br> "
 
                                                   "Copyright © Abdullah Radwan <br>");
