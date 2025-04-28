@@ -218,7 +218,6 @@
 #include <string>
 #include <map>
 #include <list>
-#include <algorithm>
 #include <stdio.h>
 
 #ifdef SI_SUPPORT_IOSTREAMS

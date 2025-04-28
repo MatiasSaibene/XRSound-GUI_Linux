@@ -17,7 +17,7 @@
    <string>XRSound GUI</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="../res.qrc">
+   <iconset resource="res.qrc">
     <normaloff>:/res/xrs.ico</normaloff>:/res/xrs.ico</iconset>
   </property>
   <widget class="QWidget" name="centralWidget">
@@ -33,7 +33,7 @@
          <string>XRSound GUI</string>
         </property>
         <property name="alignment">
-         <set>Qt::AlignHCenter|Qt::AlignTop</set>
+         <set>Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignTop</set>
         </property>
        </widget>
       </item>
@@ -58,7 +58,7 @@
               <number>100</number>
              </property>
              <property name="orientation">
-              <enum>Qt::Horizontal</enum>
+              <enum>Qt::Orientation::Horizontal</enum>
              </property>
             </widget>
            </item>
@@ -103,7 +103,7 @@
               <number>10000</number>
              </property>
              <property name="orientation">
-              <enum>Qt::Horizontal</enum>
+              <enum>Qt::Orientation::Horizontal</enum>
              </property>
             </widget>
            </item>
@@ -126,7 +126,7 @@
               <number>2</number>
              </property>
              <property name="orientation">
-              <enum>Qt::Horizontal</enum>
+              <enum>Qt::Orientation::Horizontal</enum>
              </property>
             </widget>
            </item>
@@ -157,7 +157,7 @@
               <number>100</number>
              </property>
              <property name="orientation">
-              <enum>Qt::Horizontal</enum>
+              <enum>Qt::Orientation::Horizontal</enum>
              </property>
             </widget>
            </item>
@@ -217,10 +217,10 @@
               <number>0</number>
              </property>
              <property name="orientation">
-              <enum>Qt::Horizontal</enum>
+              <enum>Qt::Orientation::Horizontal</enum>
              </property>
              <property name="tickPosition">
-              <enum>QSlider::TicksBothSides</enum>
+              <enum>QSlider::TickPosition::TicksBothSides</enum>
              </property>
              <property name="tickInterval">
               <number>1</number>
@@ -246,10 +246,10 @@
               <number>0</number>
              </property>
              <property name="orientation">
-              <enum>Qt::Horizontal</enum>
+              <enum>Qt::Orientation::Horizontal</enum>
              </property>
              <property name="tickPosition">
-              <enum>QSlider::TicksBothSides</enum>
+              <enum>QSlider::TickPosition::TicksBothSides</enum>
              </property>
              <property name="tickInterval">
               <number>1</number>
@@ -272,7 +272,7 @@
               <number>300</number>
              </property>
              <property name="orientation">
-              <enum>Qt::Horizontal</enum>
+              <enum>Qt::Orientation::Horizontal</enum>
              </property>
             </widget>
            </item>
@@ -292,7 +292,7 @@
               <number>300</number>
              </property>
              <property name="orientation">
-              <enum>Qt::Horizontal</enum>
+              <enum>Qt::Orientation::Horizontal</enum>
              </property>
             </widget>
            </item>
@@ -339,7 +339,7 @@
               <number>100</number>
              </property>
              <property name="orientation">
-              <enum>Qt::Horizontal</enum>
+              <enum>Qt::Orientation::Horizontal</enum>
              </property>
             </widget>
            </item>
@@ -359,7 +359,7 @@
               <number>900</number>
              </property>
              <property name="orientation">
-              <enum>Qt::Horizontal</enum>
+              <enum>Qt::Orientation::Horizontal</enum>
              </property>
             </widget>
            </item>
@@ -379,7 +379,7 @@
               <number>900</number>
              </property>
              <property name="orientation">
-              <enum>Qt::Horizontal</enum>
+              <enum>Qt::Orientation::Horizontal</enum>
              </property>
             </widget>
            </item>
@@ -417,7 +417,7 @@
               <number>1000000</number>
              </property>
              <property name="orientation">
-              <enum>Qt::Horizontal</enum>
+              <enum>Qt::Orientation::Horizontal</enum>
              </property>
             </widget>
            </item>
@@ -437,7 +437,7 @@
               <number>100</number>
              </property>
              <property name="orientation">
-              <enum>Qt::Horizontal</enum>
+              <enum>Qt::Orientation::Horizontal</enum>
              </property>
             </widget>
            </item>
@@ -453,7 +453,7 @@
         </item>
        </layout>
       </item>
-      <item alignment="Qt::AlignRight">
+      <item alignment="Qt::AlignmentFlag::AlignRight">
        <widget class="QPushButton" name="applyButton">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
@@ -462,7 +462,7 @@
          </sizepolicy>
         </property>
         <property name="layoutDirection">
-         <enum>Qt::LeftToRight</enum>
+         <enum>Qt::LayoutDirection::LeftToRight</enum>
         </property>
         <property name="text">
          <string>Apply</string>
@@ -518,7 +518,7 @@
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources>
-  <include location="../res.qrc"/>
+  <include location="res.qrc"/>
  </resources>
  <connections/>
 </ui>

@@ -2,12 +2,12 @@
 
 ConfigEditor::ConfigEditor() : ini(true, false, true), settings("config.cfg", QSettings::IniFormat){}
 
-const char* toStr(double x)
+QString toStr(double x)
 {
     return QString::number(x).toStdString().c_str();
 }
 
-const char* toStr(int x)
+QString toStr(int x)
 {
     return QString::number(x).toStdString().c_str();
 }
@@ -27,7 +27,11 @@ ConfigEditor::Config ConfigEditor::readConfig()
 
 ConfigEditor::Config ConfigEditor::readConfig(QString orbiterPath)
 {
-    ini.LoadFile(QString(orbiterPath + "XRSound/XRSound.cfg").toStdString().c_str());
+    QString path = orbiterPath;
+    if (!path.endsWith('/'))
+        path += '/';
+    path += "XRSound/XRSound.cfg";
+    ini.LoadFile(path.toStdString().c_str());
 
     double mastVol = atof(ini.GetValue("SYSTEM", "MasterVolume", "1.0"));
 
@@ -79,11 +83,11 @@ void ConfigEditor::writeConfig(Config config)
 {
     ini.SetDoubleValue("SYSTEM", "MasterVolume", config.mastVol);
 
-    ini.SetValue("SYSTEM", "EnableVerboseLogging", toStr(config.verbLog));
-    ini.SetValue("SYSTEM", "LogVesselAnimations", toStr(config.animLog));
-    ini.SetValue("SYSTEM", "LogThrusterData", toStr(config.thrLog));
-    ini.SetValue("SYSTEM", "SilenceOfSpace", toStr(config.silenceSpace));
-    ini.SetValue("SYSTEM", "DisableAutopilotsTimeAccThreshold", toStr(config.disApThr));
+    ini.SetValue("SYSTEM", "EnableVerboseLogging", toStr(config.verbLog).toStdString().c_str());
+    ini.SetValue("SYSTEM", "LogVesselAnimations", toStr(config.animLog).toStdString().c_str());
+    ini.SetValue("SYSTEM", "LogThrusterData", toStr(config.thrLog).toStdString().c_str());
+    ini.SetValue("SYSTEM", "SilenceOfSpace", toStr(config.silenceSpace).toStdString().c_str());
+    ini.SetValue("SYSTEM", "DisableAutopilotsTimeAccThreshold", toStr(config.disApThr).toStdString().c_str());
 
     ini.SetDoubleValue("SYSTEM", "UpdateInterval", config.updateInt);
 
@@ -99,22 +103,26 @@ void ConfigEditor::writeConfig(Config config)
     ini.SetValue("SOUND_FILES", "MusicPlayInternal", config.musicPlayInt.toStdString().c_str());
     ini.SetValue("SOUND_FILES", "MusicPlayExternal", config.musicPlayExt.toStdString().c_str());
 
-    ini.SetValue("SOUND_GROUPS", "CabinAmbienceMin", toStr(config.cabinAmbMin));
-    ini.SetValue("SOUND_GROUPS", "CabinAmbienceMax", toStr(config.cabinAmbMax));
+    ini.SetValue("SOUND_GROUPS", "CabinAmbienceMin", toStr(config.cabinAmbMin).toStdString().c_str());
+    ini.SetValue("SOUND_GROUPS", "CabinAmbienceMax", toStr(config.cabinAmbMax).toStdString().c_str());
 
     ini.SetValue("ATC", "Folder", config.atcFolder.toStdString().c_str());
 
     ini.SetDoubleValue("ATC", "Volume", config.atcVol);
 
-    ini.SetValue("ATC", "MinDelay", toStr(config.atcMinDelay));
-    ini.SetValue("ATC", "MaxDelay", toStr(config.atcMaxDelay));
-    ini.SetValue("ATC", "AllowWhileLanded", toStr(config.atcWhileLand));
-    ini.SetValue("ATC", "AllowDuringReentry", toStr(config.atcWhileReent));
-    ini.SetValue("ATC", "AllowInAtmosphere", toStr(config.atcInAtm));
-    ini.SetValue("ATC", "DelayPlanetDistance", toStr(config.delayPlanDis));
-    ini.SetValue("ATC", "DelayPlanetMultiplier", toStr(config.delayPlanMult));
+    ini.SetValue("ATC", "MinDelay", toStr(config.atcMinDelay).toStdString().c_str());
+    ini.SetValue("ATC", "MaxDelay", toStr(config.atcMaxDelay).toStdString().c_str());
+    ini.SetValue("ATC", "AllowWhileLanded", toStr(config.atcWhileLand).toStdString().c_str());
+    ini.SetValue("ATC", "AllowDuringReentry", toStr(config.atcWhileReent).toStdString().c_str());
+    ini.SetValue("ATC", "AllowInAtmosphere", toStr(config.atcInAtm).toStdString().c_str());
+    ini.SetValue("ATC", "DelayPlanetDistance", toStr(config.delayPlanDis).toStdString().c_str());
+    ini.SetValue("ATC", "DelayPlanetMultiplier", toStr(config.delayPlanMult).toStdString().c_str());
 
-    ini.SaveFile(QString(config.orbiterPath + "XRSound/XRSound.cfg").toStdString().c_str());
+    QString path = config.orbiterPath;
+    if (!path.endsWith('/'))
+        path += '/';
+    path += "XRSound/XRSound.cfg";
+    ini.SaveFile(path.toStdString().c_str());
 }
 
 void ConfigEditor::writeConfig(QString orbiterPath)

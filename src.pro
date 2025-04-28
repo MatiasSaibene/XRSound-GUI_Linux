@@ -28,6 +28,7 @@ SOURCES += \
         configeditor.cpp
 
 HEADERS += \
+        ConvertUTF.h \
         mainwindow.h \
         configeditor.h \
         SimpleIni.h

@@ -2,7 +2,7 @@
 #define CONFIGEDITOR_H
 
 #include <QString>
-#include <SimpleIni.h>
+#include "SimpleIni.h"
 #include <QSettings>
 
 class ConfigEditor{
